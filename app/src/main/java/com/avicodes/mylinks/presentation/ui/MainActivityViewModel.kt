@@ -19,8 +19,6 @@ class MainActivityViewModel(
     private val linkRepository: LinkRepository
 ) : ViewModel() {
 
-    private val linkData: MutableLiveData<Result<ApiResponse>> =
-        MutableLiveData(Result.NotInitialized)
 
     private val _analyticsList: MutableLiveData<Result<List<Analytics>>> =
         MutableLiveData(Result.NotInitialized)
@@ -42,6 +40,7 @@ class MainActivityViewModel(
     fun getRecentLinkList() = _recentLinkList
     fun getChartData() = _chartData
 
+    fun isLoading() = isLoading
     fun getLinkData() {
         viewModelScope.launch {
             linkRepository.getLinkData().collectLatest {

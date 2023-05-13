@@ -2,6 +2,8 @@ package com.avicodes.mylinks.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -32,6 +34,32 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         binding.bottomNavigationView.setupWithNavController(navController)
 
+        observeLoader()
     }
 
+    fun observeLoader(){
+        viewModel.isLoading().observe(this, Observer {
+            if(it) {
+                showLoader()
+            }
+            else {
+                hideLoader()
+            }
+        })
+    }
+
+
+    fun hideLoader() {
+        binding.apply {
+            progressCircular.visibility = View.GONE
+            fragmentContainerView.visibility = View.VISIBLE
+        }
+    }
+
+    fun showLoader() {
+        binding.apply {
+            progressCircular.visibility = View.VISIBLE
+            fragmentContainerView.visibility = View.INVISIBLE
+        }
+    }
 }

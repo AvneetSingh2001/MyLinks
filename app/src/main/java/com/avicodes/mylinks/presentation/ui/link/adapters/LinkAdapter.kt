@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.avicodes.mylinks.data.models.Link
+import com.avicodes.mylinks.data.utils.DateUtil
+import com.avicodes.mylinks.data.utils.DateUtil.convertTimestampToReadableDate
 import com.avicodes.mylinks.databinding.ItemLinkBinding
 import com.bumptech.glide.Glide
 
@@ -23,7 +25,7 @@ class LinkAdapter(
                 tvItemTitle.text = data.title
                 tvClickCount.text = data.total_clicks.toString()
                 tvItemLink.text = data.web_link
-                tvItemDate.text = data.created_at
+                tvItemDate.text = convertTimestampToReadableDate(data.created_at)
 
                 Glide.with(ivItemLink.context)
                     .load(data.original_image)

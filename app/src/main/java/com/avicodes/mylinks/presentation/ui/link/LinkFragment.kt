@@ -12,6 +12,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.avicodes.mylinks.R
 import com.avicodes.mylinks.data.models.Analytics
 import com.avicodes.mylinks.data.utils.Constants
+import com.avicodes.mylinks.data.utils.DateUtil.getChartDateRange
 import com.avicodes.mylinks.data.utils.Result
 import com.avicodes.mylinks.databinding.FragmentLinkBinding
 import com.avicodes.mylinks.presentation.ui.MainActivity
@@ -97,8 +98,15 @@ class LinkFragment : Fragment() {
 
     private fun populateChartData(overallURLChart: Map<String, Long>) {
         val chartData = ArrayList<Entry>()
-
+        var first = "0"
+        var sec = "0"
         overallURLChart.keys.forEachIndexed { index, key ->
+            if(index == 0) {
+                first = key
+            }
+            if(index == overallURLChart.size - 1) {
+                sec = key
+            }
             chartData.add(
                 Entry(
                     index.toFloat(),
@@ -106,7 +114,10 @@ class LinkFragment : Fragment() {
                     key
                 )
             )
+
         }
+
+        binding.tvRange.text = getChartDateRange(first, sec)
 
         val lineDataset = LineDataSet(chartData, "Overview")
         lineDataset.apply {
