@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:id="@+id/linkFragment"
+        android:title="@string/links"
+        android:icon="@drawable/link"
+        />
+
+    <item
+        android:id="@+id/coursesFragment"
+        android:title="@string/courses"
+        android:icon="@drawable/magazine"
+        />
+
+    <item android:title="" />
+
+    <item
+        android:id="@+id/campaignsFragment"
+        android:title="@string/campaigns"
+        android:icon="@drawable/fast"
+        />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:title="@string/profile"
+        android:icon="@drawable/user"
+        />
+
+
+</menu>

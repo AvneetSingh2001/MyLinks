@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="20dp"
+    android:layout_marginHorizontal="20dp"
+    android:background="@drawable/rect_outline"
+    android:backgroundTint="@color/white"
+    android:layout_height="120dp">
+
+    <ImageView
+        android:id="@+id/ivItemLink"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="2dp"
+        android:background="@drawable/rect_outline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="12dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/ivItemLink"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivItemLink"
+        app:layout_constraintBottom_toBottomOf="@id/ivItemLink"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvItemTitle"
+            android:maxLines="1"
+            android:lines="1"
+            android:ellipsize="end"
+            android:width="120dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/figtree_medium"
+            android:text="View All Links"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/tvItemDate"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/figtree_medium"
+            android:text="22 Aug 2022"
+            android:textColor="#999CA0"
+            android:textSize="12sp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintTop_toTopOf="@id/ivItemLink"
+        app:layout_constraintBottom_toBottomOf="@id/ivItemLink"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvClickCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/figtree_medium"
+            android:text="23"
+            android:gravity="right"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/tvClicks"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/figtree_medium"
+            android:text="Clicks"
+            android:textColor="#999CA0"
+            android:textSize="12sp"
+            />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/ivItemLink"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/dotted_bg_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/tvItemLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/figtree_medium"
+            android:lines="1"
+            android:ellipsize="end"
+            android:width="200dp"
+            android:text="https://samplelink.oia.bio/ashd..."
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="#0E6FFF"
+            android:textSize="14sp"
+            />
+
+        <ImageView
+            android:id="@+id/ivCopyLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="12dp"
+            android:src="@drawable/copy"/>
+
+
+        
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
